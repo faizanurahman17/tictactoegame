@@ -1,0 +1,210 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    color: #e0e0e0;
+    overflow: hidden;
+    position: relative;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #00d1ff;
+    text-shadow: 0 0 10px #00d1ff, 0 0 20px #00d1ff;
+    margin-bottom: 20px;
+}
+
+/* Score Display */
+.score {
+    position: absolute;
+    top: 20px;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+#scoreX {
+    left: 20px;
+    color: #00d1ff;
+}
+
+#scoreO {
+    right: 20px;
+    color: #ff00ff;
+}
+
+/* Setup Screen */
+#setup {
+    text-align: center;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 209, 255, 0.5);
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+    font-size: 1.2rem;
+    color: #00d1ff;
+}
+
+input {
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 2px solid #00d1ff;
+    border-radius: 5px;
+    background: rgba(0, 0, 0, 0.5);
+    color: #e0e0e0;
+    font-size: .8rem;
+    outline: none;
+}
+
+input:focus {
+    border-color: #ff00ff;
+    box-shadow: 0 0 10px #ff00ff;
+}
+
+button {
+    padding: 10px 20px;
+    background: #00d1ff;
+    border: none;
+    border-radius: 5px;
+    color: #1a1a2e;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+}
+
+button:hover {
+    background: #ff00ff;
+    transform: scale(1.1);
+}
+
+/* Game Board */
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 5px;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 209, 255, 0.5);
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 36px;
+    font-weight: bold;
+    background: rgba(0, 0, 0, 0.5);
+    border: 2px solid #00d1ff;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.2s;
+}
+
+.cell:hover {
+    transform: scale(1.1);
+    background: rgba(0, 209, 255, 0.2);
+}
+
+.cell.X {
+    color: #00d1ff;
+    text-shadow: 0 0 10px #00d1ff;
+}
+
+.cell.O {
+    color: #ff00ff;
+    text-shadow: 0 0 10px #ff00ff;
+}
+
+/* Message Display */
+#message {
+    margin-top: 20px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    animation: fadeIn 1s ease-in-out;
+    color: #00d1ff;
+    text-shadow: 0 0 10px #00d1ff;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.win-animation {
+    animation: bounce 0.5s ease-in-out;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+}
+
+/* Confetti Animation */
+.confetti {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: #ff00ff;
+    animation: confetti-fall 2s ease-in-out infinite;
+    opacity: 0;
+}
+
+@keyframes confetti-fall {
+    0% { transform: translateY(-100vh) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+}
+
+/* Game Controls */
+#gameControls {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+#exitButton {
+    background: #ff6b6b;
+}
+
+#exitButton:hover {
+    background: #ff4757;
+}
+
+/* Confirmation Popup */
+#confirmationPopup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 209, 255, 0.5);
+    text-align: center;
+    z-index: 1000;
+}
+
+#confirmationPopup p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+#confirmationPopup button {
+    margin: 0 10px;
+}

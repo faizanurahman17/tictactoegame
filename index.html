@@ -3,9 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body contenteditable="">
-    hello
+<body>
+    <!-- Score Displays -->
+    <div class="score" id="scoreX">Player X: 0</div>
+    <div class="score" id="scoreO">Player O: 0</div>
+
+    <!-- Setup Screen -->
+    <div id="setup">
+        <h1>Tic Tac Toe</h1>
+        <label for="playerX">Player X Name:</label>
+        <input type="text" id="playerX" oninput="capitalizeInput()" placeholder="Player 'X' Enter your name">
+        <br>
+        <label for="playerO">Player O Name:</label>
+        <input type="text" id="playerO" oninput="capitalizeInput()" placeholder="Player 'O' Enter your name">
+        <br>
+        <button id="startButton">Start Game</button>
+    </div>
+
+    <div class="for-positioning">
+        <!-- Game Board -->
+    <div class="board" id="board" style="display: none;">
+        <div class="cell" data-index="0"></div>
+        <div class="cell" data-index="1"></div>
+        <div class="cell" data-index="2"></div>
+        <div class="cell" data-index="3"></div>
+        <div class="cell" data-index="4"></div>
+        <div class="cell" data-index="5"></div>
+        <div class="cell" data-index="6"></div>
+        <div class="cell" data-index="7"></div>
+        <div class="cell" data-index="8"></div>
+    </div>
+
+    <!-- Game Controls -->
+    <div id="gameControls" style="display: none;">
+        <button id="playAgain">Play Again</button>
+        <button id="exitButton">Exit</button>
+    </div>
+
+    <!-- Message Display -->
+    <div id="message"></div>
+    </div>
+
+    <!-- Confirmation Popup -->
+    <div id="confirmationPopup">
+        <p>Are you sure you want to leave? You will lose the match!</p>
+        <button id="confirmLeave">Yes, Leave</button>
+        <button id="cancelLeave">Cancel</button>
+    </div>
+
+    <script src="script.js"></script>
+    
 </body>
 </html>
