@@ -12,6 +12,7 @@ const startButton = document.getElementById('startButton');
 const confirmationPopup = document.getElementById('confirmationPopup');
 const confirmLeaveButton = document.getElementById('confirmLeave');
 const cancelLeaveButton = document.getElementById('cancelLeave');
+const toggleInputs = document.querySelectorAll('.toggle-input');
 
 let playerX, playerO;
 let currentPlayer, currentSymbol;
@@ -205,6 +206,20 @@ function resetGame() {
     updateScores();
     location.reload();
 }
+
+toggleInputs.forEach(toggleInput => {
+    let ontoggleInput = false;
+    toggleInput.addEventListener('dblclick',()=>{
+        ontoggleInput = !ontoggleInput;
+
+        if (ontoggleInput) {
+            capitalizeInput()
+        } else {
+            uncapitaliseInput()
+        }
+    })
+});
+
 function capitalizeInput() {
     var input1 = playerXInput;
     var input2 = playerOInput;
@@ -219,3 +234,16 @@ function capitalizeInput() {
     input2.value = value2.toUpperCase();
 
 }
+
+function uncapitaliseInput() {
+    var input1 = playerXInput;
+    var input2 = playerOInput;
+    const value1 = input1.value;
+    const value2 = input2.value;
+
+    input1.value = value1.toLowerCase();
+    input2.value = value2.toLowerCase();
+}
+
+capitalizeInput();
+uncapitaliseInput();
