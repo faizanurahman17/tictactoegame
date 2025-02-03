@@ -27,6 +27,10 @@ const winningConditions = [
     [0, 4, 8], [2, 4, 6] // Diagonals
 ];
 
+// capitalise input
+// playerXInput.textContent = playerXInput.textContent.toUpperCase();
+// playerOInput.textContent = playerOInput.textContent.toUpperCase();
+
 // Initialize game
 playerXInput.focus();
 
@@ -208,7 +212,10 @@ function capitalizeInput() {
     const value2 = input2.value;
     
     // Capitalize the first letter and make the rest lowercase
-    input1.value = value1.charAt(0).toUpperCase() + value1.slice(1).toUpperCase();
-    input2.value = value2.charAt(0).toUpperCase() + value2.slice(1).toUpperCase();
+    // input1.value = value1.charAt(0).toUpperCase() + value1.slice(1).toLowerCase();
+    // input2.value = value2.charAt(0).toUpperCase() + value2.slice(1).toLowerCase();
+
+    input1.value = value1.toUpperCase();
+    input2.value = value2.toUpperCase();
 
 }
