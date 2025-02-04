@@ -221,6 +221,8 @@ toggleInputs.forEach(toggleInput => {
 });
 
 function capitalizeInput() {
+    playerXInput.style.color = "#efab07";
+    playerOInput.style.color = "#efab07";
     var input1 = playerXInput;
     var input2 = playerOInput;
     const value1 = input1.value;
@@ -236,6 +238,8 @@ function capitalizeInput() {
 }
 
 function uncapitaliseInput() {
+    playerXInput.style.color = "#fff";
+    playerOInput.style.color = "#fff";
     var input1 = playerXInput;
     var input2 = playerOInput;
     const value1 = input1.value;
